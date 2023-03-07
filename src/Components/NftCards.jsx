@@ -23,9 +23,19 @@ const NftCards = ({ data, array, modalPopUp, resetArray }) => {
         {data &&
           data.map((val, idx) => (
             <div className="card" key={idx}>
-              <img src={val.image_preview_url} alt="" />
-              <p>{val?.name} </p>
-              <span>{val?.description?.substring(0, 40)}...</span>
+              <img src={val.image_preview_url} alt="Image not provided by API" />
+              
+              {val?.name ? (
+                <p>{val?.name} </p>
+              ): (
+                <p>Name not provided by the API</p>
+              )}
+              {val?.description ? (
+                <span>{val?.description?.substring(0, 40)}...</span>
+              ) : (
+                <span>Description not provided by the API</span>
+              )}
+              
               <button
                 onClick={() => {
                   modalPopUp(val.id);

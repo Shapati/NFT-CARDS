@@ -18,6 +18,34 @@ body {
   height: 100vh;
   overflow-y: auto;
 }
+
+.spinner{
+   display: grid;
+   place-items: center;
+   width: 100vw;
+   height: 100vh;
+}
+.spinner img{
+    width: 130px;
+}
+.error{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 20px;
+}
+.error p{
+  color: var(--heading-color);
+  font-size: 50px;
+}
+.error span{
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+}
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -139,4 +167,13 @@ body {
   bottom: 30px;
   width: 300px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1300px) {
+    .modal{
+      zoom: .85;
+    }
+    .card-grid{
+      zoom: .85;
+    }
 }
