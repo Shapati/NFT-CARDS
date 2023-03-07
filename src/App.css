@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --body-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --heading-color: hsl(178, 100%, 50%);
+  --text-color: hsl(215, 51%, 70%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--body-bg);
+  font-family: "Outfit" !important;
+  height: 100vh;
+  overflow-y: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 30px;
+  width: 1200px;
+  margin: 30px auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  width: 340px;
+  height: 480px;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+.card p {
+  margin: 20px 0px;
+  color: var(--heading-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+.card span {
+  color: var(--text-color);
+  font-size: 18px;
+}
+.card button {
+  background-color: var(--heading-color);
+  border: none;
+  border: none;
+  font-size: 18px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Outfit";
+  font-weight: 500;
+  position: absolute;
+  bottom: 20px;
+  width: 300px;
+  cursor: pointer;
+}
+.cover {
+  position: absolute;
+  height: 100vh;
+  left: 0%;
+  top: 0%;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* modal */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal {
+  position: absolute;
+  width: 1250px;
+  height: 600px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 30px;
+  display: flex;
+  gap: 50px;
+}
+.modal img {
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  margin-bottom: 60px;
+}
+.details-container{
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+}
+.details {
+  display: flex;
+  margin-bottom: 20px;
+  
+}
+.details h3 {
+  color: var(--heading-color);
+}
+.details p {
+  color: var(--text-color);
+  align-self: center;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.right h1 {
+  color: var(--heading-color);
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.right p {
+  color: var(--text-color);
+  font-size: 25px;
+}
+.modal button {
+  position: absolute;
+  right: 30px;
+  background-color: var(--heading-color);
+  border: none;
+  font-size: 18px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Outfit";
+  font-weight: 500;
+
+  bottom: 30px;
+  width: 300px;
+  cursor: pointer;
 }
